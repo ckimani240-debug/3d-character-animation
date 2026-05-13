@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Punnany Escape Ashley 🎉</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow:hidden;
+font-family:Arial,sans-serif;
+height:100vh;
+
+background:
+radial-gradient(circle at top,
+#0f172a 0%,
+#020617 35%,
+#000814 100%);
+}
+
+
+
+/* START SCREEN */
+
+#startScreen{
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,0.96);
+
+z-index:999999;
+}
+
+
+
+#startBtn{
+
+padding:25px 60px;
+
+font-size:35px;
+font-weight:bold;
+
+border:none;
+border-radius:25px;
+
+cursor:pointer;
+
+color:white;
+
+background:
+linear-gradient(
+90deg,
+#ff0080,
+#ff7b00,
+#ffea00,
+#00e5ff,
+#8a2be2
+);
+
+background-size:400% 400%;
+
+animation:
+btnGlow 5s infinite linear,
+btnFloat 2s infinite ease-in-out;
+
+box-shadow:
+0 0 35px #ff00aa,
+0 0 80px #00e5ff;
+}
+
+
+
+@keyframes btnGlow{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+
+@keyframes btnFloat{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+
+
+/* STARS */
+
+.star{
+position:absolute;
+width:3px;
+height:3px;
+border-radius:50%;
+background:white;
+
+animation:twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:0.2;
+transform:scale(0.5);
+}
+
+50%{
+opacity:1;
+transform:scale(1.3);
+}
+
+100%{
+opacity:0.2;
+transform:scale(0.5);
+}
+
+}
+
+
+
+/* FIREWORKS */
+
+.fireworks{
+position:absolute;
+inset:0;
+overflow:hidden;
+z-index:1;
+pointer-events:none;
+}
+
+
+
+.firework{
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+border-radius:50%;
+
+opacity:0;
+
+animation:
+explode 5s infinite ease-out;
+
+filter:
+drop-shadow(0 0 10px currentColor)
+drop-shadow(0 0 25px currentColor);
+
+}
+
+
+
+.f1{
+top:15%;
+left:20%;
+color:#ff0080;
+background:#ff0080;
+animation-delay:0s;
+}
+
+.f2{
+top:20%;
+left:75%;
+color:#00e5ff;
+background:#00e5ff;
+animation-delay:1s;
+}
+
+.f3{
+top:35%;
+left:45%;
+color:#ffea00;
+background:#ffea00;
+animation-delay:2s;
+}
+
+.f4{
+top:12%;
+left:55%;
+color:#00ff66;
+background:#00ff66;
+animation-delay:3s;
+}
+
+.f5{
+top:28%;
+left:10%;
+color:#ff3300;
+background:#ff3300;
+animation-delay:1.5s;
+}
+
+.f6{
+top:8%;
+left:85%;
+color:#8a2be2;
+background:#8a2be2;
+animation-delay:2.7s;
+}
+
+.f7{
+top:40%;
+left:65%;
+color:#ffffff;
+background:#ffffff;
+animation-delay:4s;
+}
+
+.f8{
+top:25%;
+left:35%;
+color:#ff7b00;
+background:#ff7b00;
+animation-delay:3.5s;
+}
+
+
+
+@keyframes explode{
+
+0%{
+transform:scale(0);
+opacity:1;
+box-shadow:0 0 0 0 currentColor;
+}
+
+25%{
+
+box-shadow:
+
+0 -90px 0 5px currentColor,
+0 90px 0 5px currentColor,
+90px 0 0 5px currentColor,
+-90px 0 0 5px currentColor,
+
+70px 70px 0 5px currentColor,
+-70px -70px 0 5px currentColor,
+70px -70px 0 5px currentColor,
+-70px 70px 0 5px currentColor;
+
+opacity:1;
+}
+
+100%{
+transform:scale(2);
+opacity:0;
+box-shadow:0 0 0 0 transparent;
+}
+
+}
+
+
+
+/* DISCO BALL */
+
+.discoWrapper{
+
+position:absolute;
+
+top:35px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:250px;
+height:250px;
+
+z-index:200;
+}
+
+
+
+.discoString{
+
+position:absolute;
+
+top:-200px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:4px;
+height:200px;
+
+background:white;
+}
+
+
+
+.discoGlow{
+
+position:absolute;
+
+top:-50px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:450px;
+height:450px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,0.35),
+rgba(0,255,255,0.15),
+transparent 70%
+);
+
+filter:blur(40px);
+
+animation:glowPulse 4s infinite;
+}
+
+
+
+.discoBall{
+
+position:absolute;
+
+top:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+overflow:hidden;
+
+background:
+radial-gradient(
+circle at top left,
+#ffffff,
+#cbd5e1 40%,
+#64748b 80%
+);
+
+box-shadow:
+0 0 35px white,
+0 0 90px cyan;
+
+animation:
+spinBall 10s linear infinite,
+floatBall 4s ease-in-out infinite;
+}
+
+
+
+.tile{
+
+position:absolute;
+
+width:38px;
+height:38px;
+
+border:1px solid rgba(255,255,255,0.6);
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,0.9),
+rgba(255,255,255,0.15)
+);
+
+}
+
+
+
+.t1{top:10px;left:20px;}
+.t2{top:10px;right:20px;}
+.t3{top:60px;left:5px;}
+.t4{top:60px;right:5px;}
+.t5{top:60px;left:70px;}
+.t6{bottom:15px;left:20px;}
+.t7{bottom:15px;right:20px;}
+.t8{bottom:45px;left:70px;}
+
+
+
+@keyframes spinBall{
+
+0%{
+transform:translateX(-50%) rotate(0deg);
+}
+
+100%{
+transform:translateX(-50%) rotate(360deg);
+}
+
+}
+
+
+
+@keyframes floatBall{
+
+0%{margin-top:0;}
+50%{margin-top:12px;}
+100%{margin-top:0;}
+
+}
+
+
+
+@keyframes glowPulse{
+
+0%{opacity:0.4;}
+50%{opacity:1;}
+100%{opacity:0.4;}
+
+}
+
+
+
+/* DISCO LIGHTS */
+
+.light{
+
+position:absolute;
+
+top:0;
+
+width:18px;
+height:100vh;
+
+border-radius:40px;
+
+opacity:0.85;
+
+filter:
+blur(2px)
+drop-shadow(0 0 20px currentColor)
+drop-shadow(0 0 50px currentColor);
+
+animation:
+lightMove 2s infinite ease-in-out,
+lightColor 6s linear infinite;
+
+z-index:5;
+}
+
+
+
+.l1{left:10%;}
+.l2{left:24%;animation-delay:0.6s;}
+.l3{left:38%;animation-delay:1.2s;}
+.l4{left:52%;animation-delay:1.8s;}
+.l5{left:66%;animation-delay:2.4s;}
+.l6{left:80%;animation-delay:3s;}
+
+
+
+@keyframes lightMove{
+
+0%{
+transform:scaleY(0.7);
+opacity:0.4;
+}
+
+50%{
+transform:scaleY(1.1);
+opacity:1;
+}
+
+100%{
+transform:scaleY(0.7);
+opacity:0.4;
+}
+
+}
+
+
+
+@keyframes lightColor{
+
+0%{
+background:linear-gradient(to top,transparent,#ff0000,transparent);
+}
+
+16%{
+background:linear-gradient(to top,transparent,#00ff00,transparent);
+}
+
+32%{
+background:linear-gradient(to top,transparent,#8a2be2,transparent);
+}
+
+48%{
+background:linear-gradient(to top,transparent,#00e5ff,transparent);
+}
+
+64%{
+background:linear-gradient(to top,transparent,#ffffff,transparent);
+}
+
+80%{
+background:linear-gradient(to top,transparent,#ff7b00,transparent);
+}
+
+100%{
+background:linear-gradient(to top,transparent,#ff1493,transparent);
+}
+
+}
+
+
+
+/* BANNER */
+
+.banner{
+
+position:absolute;
+
+top:260px;
+left:50%;
+
+transform:translateX(-50%);
+
+padding:18px 45px;
+
+border-radius:25px;
+
+font-size:32px;
+
+font-weight:bold;
+
+color:white;
+
+background:
+linear-gradient(
+90deg,
+#ff0080,
+#ff7b00,
+#ffcc00
+);
+
+box-shadow:
+0 0 30px #ff00aa,
+0 0 80px #ff8800;
+
+z-index:100;
+
+transition:all 1s ease;
+}
+
+
+
+.banner.burst{
+
+transform:
+translateX(-50%)
+scale(3);
+
+opacity:0;
+
+filter:
+blur(15px)
+brightness(3);
+
+}
+
+
+
+/* FLOOR */
+
+.floor{
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+width:100%;
+height:40vh;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.05),
+rgba(15,23,42,0.95)
+);
+
+overflow:hidden;
+
+z-index:2;
+}
+
+
+
+.floor::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,0,128,0.4) 0px,
+rgba(255,0,128,0.4) 70px,
+transparent 70px,
+transparent 140px
+),
+
+repeating-linear-gradient(
+0deg,
+rgba(0,255,255,0.18) 0px,
+rgba(0,255,255,0.18) 70px,
+transparent 70px,
+transparent 140px
+);
+
+animation:floorShift 6s linear infinite;
+}
+
+
+
+@keyframes floorShift{
+
+0%{
+filter:hue-rotate(0deg);
+}
+
+100%{
+filter:hue-rotate(360deg);
+}
+
+}
+
+
+
+/* MESSAGE */
+
+#creditsWrapper{
+
+position:absolute;
+
+right:3%;
+top:0;
+
+width:36%;
+height:100vh;
+
+overflow:hidden;
+
+z-index:80;
+}
+
+
+
+#credits{
+
+position:absolute;
+
+bottom:-100%;
+
+width:100%;
+
+text-align:center;
+
+padding-top:350px;
+
+animation:
+movieCredits 95s linear forwards;
+
+}
+
+
+
+#credits h1{
+
+font-size:52px;
+
+margin-bottom:50px;
+
+color:#ffae00;
+
+text-shadow:
+0 0 15px orange,
+0 0 35px #ff8800;
+}
+
+
+
+#credits p{
+
+font-size:24px;
+
+line-height:2.3;
+
+margin-bottom:40px;
+
+color:#ffe0b2;
+}
+
+
+
+#credits h2{
+
+font-size:34px;
+
+margin-top:60px;
+
+color:#ffcc70;
+}
+
+
+
+@keyframes movieCredits{
+
+0%{
+transform:translateY(100%);
+}
+
+100%{
+transform:translateY(-180%);
+}
+
+}
+
+
+
+/* FLOWERS */
+
+.flowers{
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+width:100%;
+height:260px;
+
+display:flex;
+
+justify-content:space-evenly;
+
+align-items:flex-end;
+
+z-index:20;
+}
+
+
+
+.flower{
+
+position:relative;
+
+width:150px;
+height:240px;
+
+animation:sprout 7s ease forwards;
+}
+
+
+
+.stem{
+
+position:absolute;
+
+bottom:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:8px;
+height:150px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+to bottom,
+#4ade80,
+#14532d
+);
+}
+
+
+
+.daisy{
+
+position:absolute;
+
+top:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:85px;
+height:85px;
+
+border-radius:50%;
+
+background:
+repeating-conic-gradient(
+white 0deg 18deg,
+transparent 18deg 36deg
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+
+.daisy::after{
+
+content:"";
+
+width:28px;
+height:28px;
+
+border-radius:50%;
+
+background:#facc15;
+}
+
+
+
+.rose{
+
+position:absolute;
+
+top:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:85px;
+height:85px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,#ff8fab,#c9184a);
+
+}
+
+
+
+.dandelion{
+
+position:absolute;
+
+top:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:80px;
+height:80px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,#ffffff,#dbeafe);
+
+box-shadow:
+0 0 20px white;
+}
+
+
+
+@keyframes sprout{
+
+0%{
+transform:
+translateY(200px)
+scale(0.2);
+
+opacity:0;
+}
+
+40%{
+opacity:1;
+transform:
+translateY(0)
+scale(1);
+}
+
+100%{
+transform:
+translateY(-170px)
+scale(0.9);
+}
+
+}
+
+
+
+/* THREEJS CANVAS */
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+z-index:30;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div id="startScreen">
+
+<button id="startBtn">
+
+CLICK HERE 🎉
+
+</button>
+
+</div>
+
+
+
+<!-- STARS -->
+
+<div class="star" style="top:10%;left:15%;"></div>
+<div class="star" style="top:18%;left:30%;animation-delay:1s;"></div>
+<div class="star" style="top:8%;left:48%;animation-delay:0.5s;"></div>
+<div class="star" style="top:15%;left:65%;animation-delay:1.5s;"></div>
+<div class="star" style="top:28%;left:80%;animation-delay:0.7s;"></div>
+<div class="star" style="top:12%;left:90%;animation-delay:2s;"></div>
+
+
+
+<!-- FIREWORKS -->
+
+<div class="fireworks">
+
+<div class="firework f1"></div>
+<div class="firework f2"></div>
+<div class="firework f3"></div>
+<div class="firework f4"></div>
+<div class="firework f5"></div>
+<div class="firework f6"></div>
+<div class="firework f7"></div>
+<div class="firework f8"></div>
+
+</div>
+
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop>
+
+<source src="./music/gangtone.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- DISCO BALL -->
+
+<div class="discoWrapper">
+
+<div class="discoGlow"></div>
+
+<div class="discoString"></div>
+
+<div class="discoBall">
+
+<div class="tile t1"></div>
+<div class="tile t2"></div>
+<div class="tile t3"></div>
+<div class="tile t4"></div>
+<div class="tile t5"></div>
+<div class="tile t6"></div>
+<div class="tile t7"></div>
+<div class="tile t8"></div>
+
+</div>
+
+</div>
+
+
+
+<!-- LIGHTS -->
+
+<div class="light l1"></div>
+<div class="light l2"></div>
+<div class="light l3"></div>
+<div class="light l4"></div>
+<div class="light l5"></div>
+<div class="light l6"></div>
+
+
+
+<!-- BANNER -->
+
+<div class="banner" id="banner">
+
+🎀 HAPPY PUNNANY ESCAPE ASHLEY 🎀
+
+</div>
+
+
+
+<!-- MESSAGE -->
+
+<div id="creditsWrapper">
+
+<div id="credits">
+
+<h1>
+Happy Birthday Ashley ✨
+</h1>
+
+<p>
+You honestly became one of the most unforgettable people from my childhood.
+</p>
+
+<p>
+I still remember how much you used to annoy me back in primary school 😂
+but somehow those moments became memories I genuinely treasure today.
+</p>
+
+<p>
+Life moved fast… but the laughter, chaos, and happiness from those days never really left me.
+</p>
+
+<p>
+I hope this new chapter of your life brings you peace, love, success, and moments that make you smile endlessly.
+</p>
+
+<p>
+You deserve beautiful things, beautiful memories, and people who truly appreciate your heart.
+</p>
+
+<p>
+And even after all these years…
+you are still someone I deeply appreciate 💜
+</p>
+
+<h2>
+
+With love,<br>
+Collins & Gyatt the Zombie 🧟
+
+</h2>
+
+</div>
+
+</div>
+
+
+
+<!-- FLOOR -->
+
+<div class="floor"></div>
+
+
+
+<!-- FLOWERS -->
+
+<div class="flowers">
+
+<div class="flower">
+<div class="stem"></div>
+<div class="daisy"></div>
+</div>
+
+<div class="flower">
+<div class="stem"></div>
+<div class="rose"></div>
+</div>
+
+<div class="flower">
+<div class="stem"></div>
+<div class="dandelion"></div>
+</div>
+
+</div>
+
+
+
+<!-- THREEJS -->
+
+<script src="https://unpkg.com/three@0.126.1/build/three.min.js"></script>
+
+<script src="https://unpkg.com/three@0.126.1/examples/js/loaders/GLTFLoader.js"></script>
+
+
+
+<script>
+
+/* BUTTON FIX */
+
+const startBtn =
+document.getElementById("startBtn");
+
+const startScreen =
+document.getElementById("startScreen");
+
+const music =
+document.getElementById("bgMusic");
+
+const banner =
+document.getElementById("banner");
+
+
+
+startBtn.onclick = async function(){
+
+startScreen.style.display = "none";
+
+try{
+
+music.currentTime = 15;
+
+await music.play();
+
+}catch(error){
+
+console.log("Music autoplay blocked:",error);
+
+}
+
+
+
+/* BANNER BURST */
+
+setTimeout(()=>{
+
+banner.classList.add("burst");
+
+setTimeout(()=>{
+
+banner.style.display = "none";
+
+},3000);
+
+},3000);
+
+};
+
+
+
+/* THREEJS */
+
+const scene = new THREE.Scene();
+
+const camera =
+new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+camera.position.set(0,1.5,5);
+
+
+
+const renderer =
+new THREE.WebGLRenderer({
+antialias:true,
+alpha:true
+});
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+renderer.setPixelRatio(
+window.devicePixelRatio
+);
+
+renderer.setClearColor(0x000000,0);
+
+document.body.appendChild(renderer.domElement);
+
+
+
+/* LIGHTING */
+
+const hemiLight =
+new THREE.HemisphereLight(
+0xffffff,
+0x444444,
+2.8
+);
+
+scene.add(hemiLight);
+
+
+
+const dirLight =
+new THREE.DirectionalLight(
+0xffffff,
+2
+);
+
+dirLight.position.set(5,10,5);
+
+scene.add(dirLight);
+
+
+
+/* LOAD ZOMBIE */
+
+let model;
+let mixer;
+
+const loader =
+new THREE.GLTFLoader();
+
+loader.load(
+
+'./models/character.glb',
+
+function(gltf){
+
+model = gltf.scene;
+
+scene.add(model);
+
+
+
+model.scale.set(
+1.26,
+1.26,
+1.26
+);
+
+model.position.set(
+-2,
+-1,
+0
+);
+
+
+
+if(gltf.animations.length > 0){
+
+mixer =
+new THREE.AnimationMixer(model);
+
+const action =
+mixer.clipAction(
+gltf.animations[0]
+);
+
+action.play();
+
+}
+
+},
+
+undefined,
+
+function(error){
+
+console.log(
+"Model failed to load:",
+error
+);
+
+}
+
+);
+
+
+
+const clock =
+new THREE.Clock();
+
+
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+const delta =
+clock.getDelta();
+
+
+
+if(mixer){
+
+mixer.update(delta);
+
+}
+
+
+
+/* SLOW ROTATION */
+
+if(model){
+
+const time =
+Date.now() * 0.001;
+
+
+
+model.rotation.y =
+time * 0.5;
+
+
+
+model.rotation.z =
+Math.sin(time * 4) * 0.05;
+
+
+
+model.position.y =
+-1 +
+Math.sin(time * 4) * 0.15;
+
+}
+
+
+
+renderer.render(
+scene,
+camera
+);
+
+}
+
+animate();
+
+
+
+/* RESPONSIVE */
+
+window.addEventListener(
+
+'resize',
+
+()=>{
+
+camera.aspect =
+window.innerWidth /
+window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+}
+
+);
+
+
+
+/* VIDEO END */
+
+setTimeout(()=>{
+
+music.pause();
+
+document.body.innerHTML = `
+
+<div style="
+
+width:100vw;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:black;
+
+color:white;
+
+font-size:60px;
+
+font-family:Arial;
+
+text-align:center;
+
+">
+
+✨ THE END ✨
+
+</div>
+
+`;
+
+},85000);
+
+</script>
+
+</body>
+</html>
