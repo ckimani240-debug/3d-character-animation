@@ -21,9 +21,9 @@ height:100vh;
 
 background:
 radial-gradient(circle at top,
-#0f172a 0%,
-#020617 35%,
-#000814 100%);
+#081225 0%,
+#020617 45%,
+#000000 100%);
 }
 
 
@@ -38,18 +38,18 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-background:rgba(0,0,0,0.96);
+background:black;
 
-z-index:999999;
+z-index:99999;
 }
 
 
 
 #startBtn{
 
-padding:25px 60px;
+padding:25px 65px;
 
-font-size:35px;
+font-size:34px;
 font-weight:bold;
 
 border:none;
@@ -64,7 +64,7 @@ linear-gradient(
 90deg,
 #ff0080,
 #ff7b00,
-#ffea00,
+#ffe600,
 #00e5ff,
 #8a2be2
 );
@@ -72,8 +72,8 @@ linear-gradient(
 background-size:400% 400%;
 
 animation:
-btnGlow 5s infinite linear,
-btnFloat 2s infinite ease-in-out;
+buttonGlow 6s linear infinite,
+buttonFloat 2s ease-in-out infinite;
 
 box-shadow:
 0 0 35px #ff00aa,
@@ -82,15 +82,21 @@ box-shadow:
 
 
 
-@keyframes btnGlow{
+@keyframes buttonGlow{
+
 0%{background-position:0% 50%;}
 100%{background-position:100% 50%;}
+
 }
 
-@keyframes btnFloat{
+
+
+@keyframes buttonFloat{
+
 0%{transform:translateY(0);}
 50%{transform:translateY(-10px);}
 100%{transform:translateY(0);}
+
 }
 
 
@@ -101,27 +107,29 @@ box-shadow:
 position:absolute;
 width:3px;
 height:3px;
-border-radius:50%;
 background:white;
+border-radius:50%;
 
-animation:twinkle 2s infinite ease-in-out;
+animation:twinkle 2s infinite;
 }
+
+
 
 @keyframes twinkle{
 
 0%{
 opacity:0.2;
-transform:scale(0.5);
+transform:scale(0.6);
 }
 
 50%{
 opacity:1;
-transform:scale(1.3);
+transform:scale(1.5);
 }
 
 100%{
 opacity:0.2;
-transform:scale(0.5);
+transform:scale(0.6);
 }
 
 }
@@ -133,9 +141,8 @@ transform:scale(0.5);
 .fireworks{
 position:absolute;
 inset:0;
-overflow:hidden;
-z-index:1;
 pointer-events:none;
+z-index:1;
 }
 
 
@@ -144,8 +151,8 @@ pointer-events:none;
 
 position:absolute;
 
-width:10px;
-height:10px;
+width:12px;
+height:12px;
 
 border-radius:50%;
 
@@ -155,16 +162,16 @@ animation:
 explode 5s infinite ease-out;
 
 filter:
-drop-shadow(0 0 10px currentColor)
-drop-shadow(0 0 25px currentColor);
+drop-shadow(0 0 12px currentColor)
+drop-shadow(0 0 40px currentColor);
 
 }
 
 
 
 .f1{
-top:15%;
-left:20%;
+top:12%;
+left:18%;
 color:#ff0080;
 background:#ff0080;
 animation-delay:0s;
@@ -172,22 +179,22 @@ animation-delay:0s;
 
 .f2{
 top:20%;
-left:75%;
+left:72%;
 color:#00e5ff;
 background:#00e5ff;
 animation-delay:1s;
 }
 
 .f3{
-top:35%;
-left:45%;
+top:32%;
+left:48%;
 color:#ffea00;
 background:#ffea00;
 animation-delay:2s;
 }
 
 .f4{
-top:12%;
+top:15%;
 left:55%;
 color:#00ff66;
 background:#00ff66;
@@ -195,35 +202,19 @@ animation-delay:3s;
 }
 
 .f5{
-top:28%;
-left:10%;
+top:25%;
+left:8%;
 color:#ff3300;
 background:#ff3300;
 animation-delay:1.5s;
 }
 
 .f6{
-top:8%;
-left:85%;
+top:10%;
+left:88%;
 color:#8a2be2;
 background:#8a2be2;
-animation-delay:2.7s;
-}
-
-.f7{
-top:40%;
-left:65%;
-color:#ffffff;
-background:#ffffff;
-animation-delay:4s;
-}
-
-.f8{
-top:25%;
-left:35%;
-color:#ff7b00;
-background:#ff7b00;
-animation-delay:3.5s;
+animation-delay:2.5s;
 }
 
 
@@ -236,7 +227,7 @@ opacity:1;
 box-shadow:0 0 0 0 currentColor;
 }
 
-25%{
+30%{
 
 box-shadow:
 
@@ -269,15 +260,15 @@ box-shadow:0 0 0 0 transparent;
 
 position:absolute;
 
-top:35px;
+top:20px;
 left:50%;
 
 transform:translateX(-50%);
 
-width:250px;
-height:250px;
+width:240px;
+height:240px;
 
-z-index:200;
+z-index:50;
 }
 
 
@@ -303,13 +294,13 @@ background:white;
 
 position:absolute;
 
-top:-50px;
+top:-40px;
 left:50%;
 
 transform:translateX(-50%);
 
-width:450px;
-height:450px;
+width:420px;
+height:420px;
 
 border-radius:50%;
 
@@ -317,7 +308,7 @@ background:
 radial-gradient(
 circle,
 rgba(255,255,255,0.35),
-rgba(0,255,255,0.15),
+rgba(0,255,255,0.12),
 transparent 70%
 );
 
@@ -337,8 +328,8 @@ left:50%;
 
 transform:translateX(-50%);
 
-width:180px;
-height:180px;
+width:170px;
+height:170px;
 
 border-radius:50%;
 
@@ -348,13 +339,13 @@ background:
 radial-gradient(
 circle at top left,
 #ffffff,
-#cbd5e1 40%,
+#d1d5db 40%,
 #64748b 80%
 );
 
 box-shadow:
 0 0 35px white,
-0 0 90px cyan;
+0 0 80px cyan;
 
 animation:
 spinBall 10s linear infinite,
@@ -367,10 +358,10 @@ floatBall 4s ease-in-out infinite;
 
 position:absolute;
 
-width:38px;
-height:38px;
+width:35px;
+height:35px;
 
-border:1px solid rgba(255,255,255,0.6);
+border:1px solid rgba(255,255,255,0.5);
 
 background:
 linear-gradient(
@@ -387,10 +378,10 @@ rgba(255,255,255,0.15)
 .t2{top:10px;right:20px;}
 .t3{top:60px;left:5px;}
 .t4{top:60px;right:5px;}
-.t5{top:60px;left:70px;}
+.t5{top:60px;left:68px;}
 .t6{bottom:15px;left:20px;}
 .t7{bottom:15px;right:20px;}
-.t8{bottom:45px;left:70px;}
+.t8{bottom:45px;left:68px;}
 
 
 
@@ -428,7 +419,7 @@ transform:translateX(-50%) rotate(360deg);
 
 
 
-/* DISCO LIGHTS */
+/* LIGHTS */
 
 .light{
 
@@ -452,17 +443,17 @@ animation:
 lightMove 2s infinite ease-in-out,
 lightColor 6s linear infinite;
 
-z-index:5;
+z-index:3;
 }
 
 
 
 .l1{left:10%;}
-.l2{left:24%;animation-delay:0.6s;}
-.l3{left:38%;animation-delay:1.2s;}
-.l4{left:52%;animation-delay:1.8s;}
-.l5{left:66%;animation-delay:2.4s;}
-.l6{left:80%;animation-delay:3s;}
+.l2{left:25%;animation-delay:0.5s;}
+.l3{left:40%;animation-delay:1s;}
+.l4{left:55%;animation-delay:1.5s;}
+.l5{left:70%;animation-delay:2s;}
+.l6{left:85%;animation-delay:2.5s;}
 
 
 
@@ -527,7 +518,7 @@ background:linear-gradient(to top,transparent,#ff1493,transparent);
 
 position:absolute;
 
-top:260px;
+top:250px;
 left:50%;
 
 transform:translateX(-50%);
@@ -537,7 +528,6 @@ padding:18px 45px;
 border-radius:25px;
 
 font-size:32px;
-
 font-weight:bold;
 
 color:white;
@@ -551,8 +541,8 @@ linear-gradient(
 );
 
 box-shadow:
-0 0 30px #ff00aa,
-0 0 80px #ff8800;
+0 0 35px #ff00aa,
+0 0 90px #ff8800;
 
 z-index:100;
 
@@ -577,86 +567,16 @@ brightness(3);
 
 
 
-/* FLOOR */
-
-.floor{
-
-position:absolute;
-
-bottom:0;
-left:0;
-
-width:100%;
-height:40vh;
-
-background:
-linear-gradient(
-180deg,
-rgba(255,255,255,0.05),
-rgba(15,23,42,0.95)
-);
-
-overflow:hidden;
-
-z-index:2;
-}
-
-
-
-.floor::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-repeating-linear-gradient(
-90deg,
-rgba(255,0,128,0.4) 0px,
-rgba(255,0,128,0.4) 70px,
-transparent 70px,
-transparent 140px
-),
-
-repeating-linear-gradient(
-0deg,
-rgba(0,255,255,0.18) 0px,
-rgba(0,255,255,0.18) 70px,
-transparent 70px,
-transparent 140px
-);
-
-animation:floorShift 6s linear infinite;
-}
-
-
-
-@keyframes floorShift{
-
-0%{
-filter:hue-rotate(0deg);
-}
-
-100%{
-filter:hue-rotate(360deg);
-}
-
-}
-
-
-
 /* MESSAGE */
 
 #creditsWrapper{
 
 position:absolute;
 
-right:3%;
+right:2%;
 top:0;
 
-width:36%;
+width:38%;
 height:100vh;
 
 overflow:hidden;
@@ -738,6 +658,76 @@ transform:translateY(-180%);
 
 
 
+/* FLOOR */
+
+.floor{
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+width:100%;
+height:40vh;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.05),
+rgba(15,23,42,0.95)
+);
+
+overflow:hidden;
+
+z-index:2;
+}
+
+
+
+.floor::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,0,128,0.4) 0px,
+rgba(255,0,128,0.4) 70px,
+transparent 70px,
+transparent 140px
+),
+
+repeating-linear-gradient(
+0deg,
+rgba(0,255,255,0.18) 0px,
+rgba(0,255,255,0.18) 70px,
+transparent 70px,
+transparent 140px
+);
+
+animation:floorShift 6s linear infinite;
+}
+
+
+
+@keyframes floorShift{
+
+0%{
+filter:hue-rotate(0deg);
+}
+
+100%{
+filter:hue-rotate(360deg);
+}
+
+}
+
+
+
 /* FLOWERS */
 
 .flowers{
@@ -756,7 +746,7 @@ justify-content:space-evenly;
 
 align-items:flex-end;
 
-z-index:20;
+z-index:10;
 }
 
 
@@ -909,7 +899,7 @@ scale(0.9);
 
 
 
-/* THREEJS CANVAS */
+/* THREEJS */
 
 canvas{
 position:absolute;
@@ -944,7 +934,6 @@ CLICK HERE 🎉
 <div class="star" style="top:8%;left:48%;animation-delay:0.5s;"></div>
 <div class="star" style="top:15%;left:65%;animation-delay:1.5s;"></div>
 <div class="star" style="top:28%;left:80%;animation-delay:0.7s;"></div>
-<div class="star" style="top:12%;left:90%;animation-delay:2s;"></div>
 
 
 
@@ -958,8 +947,6 @@ CLICK HERE 🎉
 <div class="firework f4"></div>
 <div class="firework f5"></div>
 <div class="firework f6"></div>
-<div class="firework f7"></div>
-<div class="firework f8"></div>
 
 </div>
 
@@ -969,7 +956,7 @@ CLICK HERE 🎉
 
 <audio id="bgMusic" loop>
 
-<source src="./music/gangtone.mp3" type="audio/mpeg">
+<source src="music/gangtone.mp3" type="audio/mpeg">
 
 </audio>
 
@@ -1032,24 +1019,24 @@ Happy Birthday Ashley ✨
 </h1>
 
 <p>
-You honestly became one of the most unforgettable people from my childhood.
+You became one of the most unforgettable people from my childhood.
 </p>
 
 <p>
-I still remember how much you used to annoy me back in primary school 😂
+I still remember how much you used to annoy me 😂
 but somehow those moments became memories I genuinely treasure today.
 </p>
 
 <p>
-Life moved fast… but the laughter, chaos, and happiness from those days never really left me.
+Life moved fast… but the laughter and happiness from those days never really left me.
 </p>
 
 <p>
-I hope this new chapter of your life brings you peace, love, success, and moments that make you smile endlessly.
+I hope this new chapter of your life brings you peace, love, success, and endless happiness.
 </p>
 
 <p>
-You deserve beautiful things, beautiful memories, and people who truly appreciate your heart.
+You deserve beautiful things, beautiful memories, and people who appreciate your heart.
 </p>
 
 <p>
@@ -1109,7 +1096,7 @@ Collins & Gyatt the Zombie 🧟
 
 <script>
 
-/* BUTTON FIX */
+/* BUTTON */
 
 const startBtn =
 document.getElementById("startBtn");
@@ -1137,7 +1124,7 @@ await music.play();
 
 }catch(error){
 
-console.log("Music autoplay blocked:",error);
+console.log(error);
 
 }
 
@@ -1198,7 +1185,7 @@ document.body.appendChild(renderer.domElement);
 
 
 
-/* LIGHTING */
+/* LIGHTS */
 
 const hemiLight =
 new THREE.HemisphereLight(
@@ -1223,7 +1210,7 @@ scene.add(dirLight);
 
 
 
-/* LOAD ZOMBIE */
+/* LOAD MODEL */
 
 let model;
 let mixer;
@@ -1233,7 +1220,7 @@ new THREE.GLTFLoader();
 
 loader.load(
 
-'./models/character.glb',
+'models/character.glb',
 
 function(gltf){
 
@@ -1278,7 +1265,7 @@ undefined,
 function(error){
 
 console.log(
-"Model failed to load:",
+"Model failed:",
 error
 );
 
@@ -1310,14 +1297,14 @@ mixer.update(delta);
 
 
 
-/* SLOW ROTATION */
-
 if(model){
 
 const time =
 Date.now() * 0.001;
 
 
+
+/* SLOW ROTATION */
 
 model.rotation.y =
 time * 0.5;
